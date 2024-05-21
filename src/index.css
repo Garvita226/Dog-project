@@ -1,5 +1,7 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +12,224 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.header {
+  width: 100vw;
+}
+
+.dark {
+  background-color: rgb(49, 49, 151);
+  color: rgb(199, 197, 197);
+}
+
+.light {
+  background-color: rgb(199, 197, 197);
+  color: rgb(49, 49, 151);
+}
+
+.header nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  font-weight: 600;
+}
+
+.header nav ul > div {
+  display: flex;
+}
+
+.header nav ul li {
+  padding: 10px;
+  margin: 10px;
+}
+
+.header nav ul li i {
+  margin-right: 5px;
+}
+
+.header nav ul li a {
+  color: rgb(199, 197, 197);
+  /* Inherit color from parent element */
+  text-decoration: none;
+  /* Remove underline */
+}
+
+.header nav ul li a:link,
+.header nav ul li a:visited,
+.header nav ul li a:hover,
+.header nav ul li a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dark nav ul > div li a.active {
+  color: white;
+  font-weight: 800;
+}
+
+.light nav ul > div li a.active {
+  color: #0f0f7e;
+  font-weight: 800;
+}
+
+.home {
+  width: 100vw;
+  height: 89vh;
+  position: relative;
+  background-color: black;
+}
+
+.home.light {
+  background-color: white; 
+}
+
+.home.dark {
+  background-color: black; 
+}
+
+.dog-text-1 {
+  font-size: 348px;
+  font-weight: 600;
+  background: linear-gradient(to bottom, #FF0000 50%, #ffe603 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.dog-text-2 {
+  font-size: 348px;
+  font-weight: 600;
+  background: linear-gradient(to bottom, #ffe603 50%, #FF0000 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-49%, -49%);
+}
+
+.home img {
+  height: 287px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-44%, -60%);
+  z-index: 100;
+}
+
+.header .toggle-button {
+  display: none; /* Hide toggle button by default */
+}
+
+.btn {
+  padding: 6px 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 50px;
+}
+
+.light-btn {
+  background-color: #0f0f7e;
+  color: white;
+}
+
+.dark-btn {
+  background-color: white;
+  color: #0f0f7e;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 1200px) {
+  .dog-text-1, .dog-text-2 {
+    font-size: 200px;
+  }
+
+  .home img {
+    height: 150px;
+  }
+
+  .btn {
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header nav ul {
+    flex-direction: column;
+  }
+
+  .header nav ul > div {
+    width: 100%;
+  }
+
+  .header nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dog-text-1, .dog-text-2 {
+    font-size: 100px;
+  }
+
+  .home img {
+    height: 100px;
+  }
+
+  .btn-container {
+    width: 100%;
+  }
+
+  .btn {
+    margin: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    width: 100%;
+  }
+
+  .header nav ul {
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100%;
+  }
+
+  .header nav ul > div {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header nav ul > div > li {
+    padding: 10px;
+    margin-right: 20px;
+    flex: 0 1 calc(23.33% - 0px); 
+  }
+
+  .dog-text-1, .dog-text-2 {
+    font-size: 60px;
+  }
+
+  .home img {
+    height: 60px;
+  }
+
+  .header nav ul .btn-container {
+    display: block;
+  }
+
+  .btn-container .btn {
+    width: 90%;
+    margin: auto;
+  }
 }
